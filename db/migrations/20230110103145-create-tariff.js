@@ -13,10 +13,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      age: {
-        allowNull: false,
-        type: Sequelize.INTEGER
-      },
       dayOfTheWeek: {
         allowNull: false,
         type: Sequelize.TEXT

@@ -25,11 +25,19 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      species: {
+      photo5: {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      description: {
+      photo6: {
+        allowNull: false,
+        type: Sequelize.TEXT
+      },
+      name: {
+        allowNull: false,
+        type: Sequelize.TEXT
+      },
+      body: {
         allowNull: false,
         type: Sequelize.TEXT
       },
