@@ -8,6 +8,10 @@ const { sequelize } = require('./db/models');
 const app = express();
 const morgan = require('morgan');
 
+const mainRoute = require('./src/routes/mainRoute')
+const animalsRoute = require('./src/routes/animalsRoute')
+const adminLoginRoute = require('./src/routes/adminLoginRoute')
+
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const { PORT, SESSION_SECRET } = process.env;
@@ -31,9 +35,9 @@ const sessionConfig = {
 
 app.use(session(sessionConfig));
 
-app.get('/', (req, res) => {
-  res.send('Привет!');
-});
+app.use('/', mainRoute);
+app.use('/animals', animalsRoute)
+app.use('/adminLogin',adminLoginRoute)
 
 app.listen(PORT || 3333, async () => {
   try {
